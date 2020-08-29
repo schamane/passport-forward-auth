@@ -2,7 +2,7 @@
 
 Small library for nodejs to use HTTP headers authentication behind traefik forward-auth.
 
-## Example how to use it:
+## Example how to use it
 
 ```ts
 import express, { Application } from 'express';
