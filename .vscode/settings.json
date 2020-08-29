@@ -1,0 +1,44 @@
+{
+  "editor.formatOnSave": false,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/node_modules/": true,
+    "**/build/**/*.js.map": {
+      "when": "$(basename).js"
+    },
+    "**/build/**/*.js": {
+      "when": "$(basename).ts"
+    }
+  },
+  "search.exclude": {
+    "build": true,
+    "node_modules": true
+  },
+  "eslint.validate": [
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ],
+  "tslint.enable": false,
+  "eslint.enable": true,
+  "[json]": {
+    "editor.formatOnSave": true,
+  },
+  "[html]": {
+    "editor.formatOnSave": true,
+  },
+  "appService.defaultWebAppToDeploy": "None",
+  "eslint.workingDirectories": [
+    {"directory": "api", "changeProcessCWD": true },
+    {"directory": "web", "changeProcessCWD": true }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": false
+  }
+}

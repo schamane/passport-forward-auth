@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "types/*": [
+        "types/*"
+      ]
+    },
+    "incremental": true,
+    "tsBuildInfoFile": "./.buildcache/api.tsbuildinfo",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es2018",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "outDir": "build",
+    "skipLibCheck": true
+  },
+  "typeRoots": ["./types"],
+  "include": [
+    "src/**/*",
+    "types/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
