@@ -79,7 +79,7 @@ export class ForwardAuthStrategy extends Strategy {
       return this.success(user, info);
     };
 
-    const headers = this.authHeaders.map((key) => ({ key, value: req.headers[key] })).reduce((result, { key, value }) => (value ? { ...result, [key]: value } : result), {});
+    const headers = req && req.headers ? this.authHeaders.map((key) => ({ key, value: req.headers[key] })).reduce((result, { key, value }) => (value ? { ...result, [key]: value } : result), {}) : [];
 
     try {
       return this.verify(headers, verified);
