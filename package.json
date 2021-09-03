@@ -1,6 +1,6 @@
 {
   "name": "passport-forward-auth",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Authentication strategy to support traefik forward-auth for Passport",
   "keywords": [
     "auth",
