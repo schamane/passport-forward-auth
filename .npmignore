@@ -1,5 +1,5 @@
 examples/
-build/tests
+dist/tests
 src/
 .buildcache/
 

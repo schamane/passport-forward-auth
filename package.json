@@ -15,25 +15,27 @@
   },
   "repository": "schamane/passport-forward-auth",
   "license": "MIT",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "type": "module",
+  "source": "src/index.ts",
+  "module": "dist/passport-forward-auth.modern.js",
+  "main": "dist/passport-forward-auth.cjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "@types/express": "^4.17.13",
     "@types/passport": "^1.0.7",
     "express": "^4.17.1",
     "passport": "^0.4.1"
   },
   "scripts": {
-    "start": "node -r source-map-support/register build/app.js",
-    "build": "tsc",
-    "watch": "tsc -w",
-    "lint": "eslint --ext .ts src",
-    "lint:fix": "eslint --fix --ext .ts src",
-    "clean:build": "rimraf build",
+    "build:check": "tsc",
+    "build": "npm run clean && microbundle build --compress --target node --raw --format modern,cjs",
+    "lint": "eslint --ext .ts src/",
+    "lint:fix": "eslint --fix --ext .ts src/",
+    "clean:build": "rimraf dist",
     "clean:build:cache": "rimraf build .buildcache",
-    "clean": "npm run -s clean:build && npm run -s clean:build:cache",
-    "buildpackage": "npm run build && cd build && cp ../package.json . && cp ../README.md . && cp ../LICENSE . && npm pack",
-    "publish": "npm publish ./build/passport-forward-auth-*.tgz --access=public"
+    "clean": "npm run -s clean:build && npm run -s clean:build:cache"
   },
   "devDependencies": {
     "@types/node": "^16.7.10",
@@ -46,12 +48,11 @@
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^4.0.0",
+    "@types/express": "^4.17.13",
+    "microbundle": "^0.13.3",
     "prettier-eslint": "^13.0.0",
     "rimraf": "^3.0.2",
     "source-map-support": "^0.5.19",
     "typescript": "4.4.2"
-  },
-  "files": [
-    "lib/"
-  ]
+  }
 }
