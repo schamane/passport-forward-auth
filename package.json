@@ -35,6 +35,7 @@
     "lint:fix": "eslint --fix --ext .ts src/",
     "clean:build": "rimraf dist",
     "clean:build:cache": "rimraf build .buildcache",
+    "prepublish": "npm run build",
     "clean": "npm run -s clean:build && npm run -s clean:build:cache"
   },
   "devDependencies": {
